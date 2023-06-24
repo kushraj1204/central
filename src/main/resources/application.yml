@@ -1,0 +1,32 @@
+server:
+  port: 8084
+
+spring:
+  datasource:
+    url: jdbc:postgresql://10.250.3.31:5432/central
+    username: postgres
+    password: 123456
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    driver-class-name: org.postgresql.Driver
+    openInView: false
+    show_sql: false
+    generate-ddl: true
+    hibernate:
+      ddl-auto: none
+
+auth:
+  hibernate:
+    dialect: org.hibernate.dialect.PostgreSQLDialect
+
+jwt_configs:
+  secret: ${NCHLCNTRL_JWT_SECRET}
+  access_token_validity_ms: ${NCHLCNTRL_JWT_ACCESS_VALIDITY_MS}
+  refresh_token_validity_ms: ${NCHLCNTRL_JWT_REFRESH_VALIDITY_MS}
+
+logging:
+  level:
+    root: info
+
+
+
